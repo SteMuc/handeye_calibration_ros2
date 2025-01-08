@@ -58,7 +58,7 @@ class RobotTransformNode(Node):
         self.pose_count = 0
         self.subscription_keypress = self.create_subscription(String, 'keypress_topic', self.keypress_callback, 10)
         
-        with open('src/handeye_calibration_ros2/handeye_realsense/config.yaml', 'r') as file:
+        with open('src/handeye_calibration/handeye_realsense/config.yaml', 'r') as file:
             config = yaml.safe_load(file)
         self.robot_data_file_name = config["robot_data_file_name"]
         self.base_link = config["base_link"]

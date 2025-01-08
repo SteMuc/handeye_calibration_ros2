@@ -26,9 +26,9 @@ You can also modify other parameters as per your preference in the information f
 ### Hardware and Software Tested:
 
 #### Hardware:
-1. **Robot**: KUKA LBR iiwa 7
+1. **Robot**: UR10e
 2. **Camera**: 
-   - Intel RealSense D415
+   - Intel RealSense D405
    - Microsoft Azure Kinect
 3. **Chessboard**
 4. **ArUco Marker**: 
@@ -36,12 +36,12 @@ You can also modify other parameters as per your preference in the information f
    - Side Length: 150mm
 
 #### Software:
-1. **Robot Driver**: lbr_fri_ros2_stack
+1. **Robot Driver**: universal_robot_driver
 2. **Camera Drivers**:
    - realsense-ros
    - Azure_Kinect_ROS_Driver
-3. **Operating System**: Ubuntu 22.04
-4. **ROS 2**: Humble
+3. **Operating System**: Ubuntu 24.04
+4. **ROS 2**: Jazzy
 
 
 ## Table of Contents
