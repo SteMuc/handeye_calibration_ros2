@@ -1,6 +1,6 @@
 aruco_dictionary_name: "DICT_ARUCO_ORIGINAL"
 aruco_marker_side_length: 0.150
-camera_calibration_parameters_filename: "src/handeye_calibration_ros2/handeye_realsense/realsense_info.yaml"
+camera_calibration_parameters_filename: "src/handeye_calibration_ros/handeye_realsense/realsense_info.yaml"
 image_topic: "/camera/camera/color/image_rect_raw"
 aruco_marker_name: "aruco_marker"
 calculated_camera_optical_frame_name: "camera_color_optical_frame"

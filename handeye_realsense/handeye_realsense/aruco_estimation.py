@@ -30,10 +30,6 @@ BibTeX:
   year      = {2024},
 }
 """
-
-
-
-
 import rclpy
 from rclpy.node import Node
 from rclpy.qos import QoSProfile, DurabilityPolicy
@@ -76,7 +72,7 @@ class ArucoNode(Node):
     def __init__(self):
         super().__init__('aruco_node')
 
-        with open('src/handeye_calibration_ros2/handeye_realsense/config.yaml', 'r') as file:
+        with open('src/handeye_calibration_ros/handeye_realsense/config.yaml', 'r') as file:
             config = yaml.safe_load(file)
         self.aruco_dictionary_name = config["aruco_dictionary_name"]
         print(self.aruco_dictionary_name)
