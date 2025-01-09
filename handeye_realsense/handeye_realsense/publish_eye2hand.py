@@ -51,7 +51,7 @@ class TransformPublisher(Node):
     def __init__(self):
         super().__init__('transform_publisher')
         
-        with open('src/handeye_realsense/config.yaml', 'r') as file:
+        with open('src/handeye_calibration_ros/handeye_realsense/config.yaml', 'r') as file:
             config = yaml.safe_load(file)
         self.handeye_result_file_name = config["handeye_result_file_name"]
         self.base_link = config["base_link"]
@@ -166,10 +166,10 @@ class TransformPublisher(Node):
         self.tf_broadcaster.sendTransform(transform_msg)
 
         # Send the transform from camera_sim to world
-        Tc = self.get_full_transformation_matrix()
-        rc = Tc[:3, :3]
-        tc = Tc[:3, 3]
-        self.publish_transform(tc, rc, self.world_frame, self.ee_link)    
+        # Tc = self.get_full_transformation_matrix()
+        # rc = Tc[:3, :3]
+        # tc = Tc[:3, 3]
+        # self.publish_transform(tc, rc, self.world_frame, self.ee_link)    
 
 
 def main(args=None):

@@ -36,13 +36,14 @@ from rclpy.node import Node
 import cv2
 import numpy as np
 import yaml
+import os
 
 class HandEyeCalibrationNode(Node):
     def __init__(self):
         super().__init__('hand_eye_calibration_node')
         self.get_logger().info("Starting Hand-Eye Calibration Node")
         
-        with open('src/handeye_realsense/config.yaml', 'r') as file:
+        with open('src/handeye_calibration_ros/handeye_realsense/config.yaml', 'r') as file:
             config = yaml.safe_load(file)
         self.robot_data_file_name = config["robot_data_file_name"]
         self.marker_data_file_name = config["marker_data_file_name"]
@@ -97,10 +98,10 @@ class HandEyeCalibrationNode(Node):
         self.save_yaml(R, t)
         #self.save_yaml_profile(R_qua, t)
     
-    def rotation_matrix_to_quaternion(self, matrix):
-        """Convert a 3x3 rotation matrix into a quaternion."""
-        rotation = R.from_matrix(matrix)
-        return rotation.as_quat()
+    # def rotation_matrix_to_quaternion(self, matrix):
+    #     """Convert a 3x3 rotation matrix into a quaternion."""
+    #     rotation = R.from_matrix(matrix)
+    #     return rotation.as_quat()
 
     def save_yaml(self, R, t):
         '''This function will always show only the updated result'''
